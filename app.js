@@ -38,14 +38,12 @@ app.post("/", function (req, res) {
   const fullName = _.toLower(req.body.fName + " " + req.body.lName);
 
   const portfolio = req.body.portfolio;
-  console.log(fullName, portfolio);
   Volunteer.findOne({ name: fullName }, function (err, foundVolunteer) {
     if (err) {
       console.log(err);
     } else {
       if (foundVolunteer) {
         if (foundVolunteer.portfolio === portfolio) {
-          console.log("true");
           res.render("success", {
             name: _.startCase(fullName),
           });

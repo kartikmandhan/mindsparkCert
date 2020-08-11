@@ -2,7 +2,18 @@ body {
   font-family: "Times New Roman", Times, serif;
   color: #0f4c75;
   text-align: center;
-  background: #ecf0f3 !important;
+  background: #9796f0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fbc7d4,
+    #9796f0
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #fbc7d4,
+    #9796f0
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   height: 100vh;
 }
 @keyframes flipInY {
@@ -63,7 +74,7 @@ body {
   padding: 50px 35px 35px 35px;
   border-radius: 40px;
   background: #ecf0f3;
-  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
 }
 
 .login-div .logo img {
@@ -168,4 +179,9 @@ body {
     -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
     inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
     inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
+}
+svg {
+  position: fixed;
+  top: 36px;
+  left: -75px;
 }
